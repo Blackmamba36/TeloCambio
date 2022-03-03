@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Post</h1>
+
+<ul>
+{% for post in object_list %}
+    <div class="media content-section">
+        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.post_date }} - 
+        <a href="{% url 'category' post.category.id %}">{{ post.category }}</a>
+        <a href="{% url 'update_post' post.pk %}">(Editar)</a>
+        <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a>
+          
+       <div class="article-content">{{ post.body }}</div>
+    </div>
+
+{% endfor %}
+</ul>
+{% endblock %}
