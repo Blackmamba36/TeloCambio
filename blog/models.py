@@ -39,7 +39,7 @@ class Post(models.Model):
     body = models.TextField()
     post_date= models.DateField(auto_now_add=True)
     category = models.ForeignKey(Category,null=True , on_delete=models.SET_NULL)
-    image = models.ImageField(default='default.jpg', upload_to='post')
+    image = models.ImageField(upload_to='post')
     #product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
     def __str__(self):

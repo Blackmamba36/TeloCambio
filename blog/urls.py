@@ -1,7 +1,8 @@
 from django.urls import path
 #from . import views
 from .views import HomeView, ArticleDetailView, AddPostView, UpdatePostView, DeletePostView, AddCategoryView, categoryView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path('', views.home, name = "home"),
@@ -14,4 +15,4 @@ urlpatterns = [
     path('category/<int:id>/', categoryView, name = 'category'),
     
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
