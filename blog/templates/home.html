@@ -6,10 +6,10 @@
 
 <h1>Post</h1>
 
-<ul>
+<div class=" d-flex flex-row flex-wrap">
 {% for post in object_list %}
 
-<div class="card" style="width: 18rem;">
+<div class="card m-1 border-dark" style="width: 18rem;">
     <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
     <div class="card-body">
         <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.post_date }} - 
@@ -28,5 +28,5 @@
 
       
 {% endfor %}
-</ul>
+</div>
 {% endblock %}
